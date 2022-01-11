@@ -121,11 +121,11 @@ function hungryDog(weight, age){
       return 0.02 * weight
     }
   }else{
-    if(age  >= 2/12 && age <= 4/12){
+    if(age  >= 0.166 && age <= 0.333){
       return 0.1 * weight
-    }else if(age > 4/12 && age <= 7/12){
+    }else if(age > 0.333 && age < .583){
       return 0.05 * weight
-    }else if(age > 7/12 && age <= 12/12){
+    }else if(age >= .583 && age <= 1){
       return 0.04 * weight
     }
   }
@@ -155,9 +155,19 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
+// let computer = Math.floor(Math.random() * 3)
 function game(user, computer){
-  /*add your code here*/
+  console.log(computer + " fhjdaslfhaskldfhasjklfdalsfdhklw")
+  console.log(user)
+  if(user == computer){
+    return "it's a tie"
+  }else if(user == 'rock'){
+    return computer == 'paper' ? "you lose!" : "you win!"
+  }else if(user == 'paper'){
+    return computer == 'scissors' ? "you lose!" : "you win!"
+  }else{
+    return computer == 'rock' ? "you lose!" : "you win!"
+  }
 }
 
 
@@ -173,10 +183,9 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){
+  return kilometers * 0.621371; 
 }
-
 
 
 //Task 5b - Feet to CM
@@ -187,8 +196,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(centimeters){
+  return centimeters / 30.48
 }
 
 
@@ -203,8 +212,8 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(n){
+      return `${n} bottles of soda on the wall, ${n} bottles of soda, take one down pass it around ${n-1} bottles of soda on the wall`
 }
 
 
@@ -223,8 +232,12 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(personsGrade){
+  if(personsGrade > 89) return 'you got an A' 
+  if(personsGrade > 79) return 'you got a B'
+  if(personsGrade > 69) return 'you got a C'
+  if(personsGrade > 59) return 'you got a D'
+  return 'you got an F'
 }
 
 
@@ -242,8 +255,14 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(s) {
+  let vowelArray = ['a','e','i','o','u']
+  let vowelCount = 0; 
+  let lowerCase = s.toLowerCase();
+  for(let i = 0; i < lowerCase.length; i++){
+    if(vowelArray.includes(lowerCase.charAt(i))) vowelCount++;
+  }
+  return vowelCount;
 }
 
 
